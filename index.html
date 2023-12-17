@@ -214,24 +214,49 @@
 
 
 
-		//add images to gallery div for slideshow
+		var folder = "images/gallery/";
 		var galleryDiv = document.getElementsByClassName("slideshow-container")[0];
-		gallery.photos.forEach((photo, i) => {
-			var iDiv = document.createElement('div');
-			iDiv.className = "mySlides";
+		$.ajax({
+			url : folder,
+			success: function (data) {
+				$(data).find("a").attr("href", function (i, val) {
+					if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+						//$("body").append( "<img src='"+ folder + val +"'>" );
+						var iDiv = document.createElement('div');
+						iDiv.className = "mySlides";
 
-			var img = document.createElement('img');
-			img.src = "./images/gallery/" + photo;
-			img.style = "width:100%;";
+						var img = document.createElement('img');
+						img.src = "./images/gallery/" + val;
+						img.style = "width:100%;";
 
-			iDiv.appendChild(img);
+						iDiv.appendChild(img);
 
-			galleryDiv.appendChild(iDiv);
+						galleryDiv.appendChild(iDiv);
+					} 
+				});
+				showSlides(slideIndex);
+			}
 		});
 
 
+		//add images to gallery div for slideshow
+		// var galleryDiv = document.getElementsByClassName("slideshow-container")[0];
+		// gallery.photos.forEach((photo, i) => {
+		// 	var iDiv = document.createElement('div');
+		// 	iDiv.className = "mySlides";
+
+		// 	var img = document.createElement('img');
+		// 	img.src = "./images/gallery/" + photo;
+		// 	img.style = "width:100%;";
+
+		// 	iDiv.appendChild(img);
+
+		// 	galleryDiv.appendChild(iDiv);
+		// });
+
+
 		let slideIndex = 1;
-		showSlides(slideIndex);
+		
 
 		// Next/previous controls
 		function plusSlides(n) {
@@ -260,19 +285,7 @@
 		} 
 
 
-		var folder = "images/gallery/";
-
-		$.ajax({
-			url : folder,
-			success: function (data) {
-				console.log(data);
-				$(data).find("a").attr("href", function (i, val) {
-					if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-						$("body").append( "<img src='"+ folder + val +"'>" );
-					} 
-				});
-			}
-		});
+		
 	</script>
 
 </body>
