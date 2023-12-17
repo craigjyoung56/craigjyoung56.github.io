@@ -5,7 +5,7 @@ var board = {
             "name": "Bruce Smentek",
             "phone": "(805) 368-0414",
             "email": "smetnek31@yahoo.com",
-            "img": "./images/gallery/Bruce.jpeg"
+            "img": "./images/member_photos/Bruce.jpeg"
         },
         {
             "title": "Vice President",
@@ -19,7 +19,7 @@ var board = {
             "name": "Don Ludwig",
             "phone": "(818) 846-8943",
             "email": "ludwig@usc.edu",
-            "img": "./images/gallery/don_ludwig.jpg"
+            "img": "./images/member_photos/don_ludwig.jpg"
         },
         {
             "title": "Treasurer/Greens",
@@ -33,7 +33,7 @@ var board = {
             "name": "Peter Hendrickson",
             "phone": "(818) 846-1812",
             "email": "l8sleeper@earthlink.net",
-            "img": "./images/gallery/peter_hendrickson.jpeg"
+            "img": "./images/member_photos/peter_hendrickson.jpeg"
         },
         {
             "title": "Rules",
@@ -61,14 +61,14 @@ var board = {
             "name": "John Shannon",
             "phone": "(818) 353-5378",
             "email": "johnshannon422@gmail.com",
-            "img": "./images/gallery/john_shannon.jpg"
+            "img": "./images/member_photos/john_shannon.jpg"
         },
         {
             "title": "Membership",
             "name": "Peter Hendrickson",
             "phone": "(818) 846-1812",
             "email": "l8sleeper@earthlink.net",
-            "img": "./images/gallery/peter_hendrickson.jpeg"
+            "img": "./images/member_photos/peter_hendrickson.jpeg"
         },
         {
             "title": "Inter-Club Play",
@@ -82,21 +82,21 @@ var board = {
             "name": "Mike Krose",
             "phone": "(323) 821-1421",
             "email": "mikekrose@roarrunner.com",
-            "img": "./images/gallery/mike_krose.jpg"
+            "img": "./images/member_photos/mike_krose.jpg"
         },
         {
             "title": "Match Play",
             "name": "Joseph Gunn",
             "phone": "(818) 640-9446",
             "email": "joegunn@aol.com",
-            "img": "./images/gallery/joe_gunn.jpeg"
+            "img": "./images/member_photos/joe_gunn.jpeg"
         },
         {
             "title": "Website",
             "name": "Saran Atwal",
             "phone": "(818) 606-8037",
             "email": "saranatwal@hotmail.com",
-            "img": "./images/gallery/saran_atwal.jpg"
+            "img": "./images/member_photos/saran_atwal.jpg"
         },
         {
             "title": "Assist Treasurer",
@@ -110,7 +110,7 @@ var board = {
             "name": "Robert Trainer",
             "phone": "(818) 848-8616",
             "email": "rjcdtrain@earthlink.net",
-            "img": "./images/gallery/robert_trainer.jpg"
+            "img": "./images/member_photos/robert_trainer.jpg"
         },
         {
             "title": "Member at Large",
