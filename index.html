@@ -76,8 +76,8 @@
 				<header class="major">
 					<h2>Tournaments</h2>
 				</header>
-				<h3>Upcoming Tournaments</h3>
-				<ul class="features">
+				<h3>Recent Tournaments</h3>
+				<ul class="features" id="recentTournaments">
 					<li>
 						<h3>Ipsum consequat</h3>
 						<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed
@@ -93,7 +93,7 @@
 						<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed
 							consequat.</p>
 					</li>
-				</ul>
+				</ul>				
 				<footer class="major">
 					<ul class="actions special">
 						<li><a href="tournaments.html" class="button">View Results</a></li>
@@ -212,6 +212,11 @@
 			boardDiv.appendChild(iDiv);
 		});
 
+		//loop through tournaments
+		var tournamentDiv = document.getElementById("recentTournaments");
+		$.getJSON("file:///C:/Code/BSMGC/craigjyoung56.github.io/tournaments.json", function(data) {
+			console.log(data);
+		});
 
 
 		var folder = "images/gallery/";
