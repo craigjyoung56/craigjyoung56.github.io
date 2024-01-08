@@ -80,11 +80,13 @@
 				<ul class="features" id="recentTournaments">
 					
 				</ul>				
-				<!-- <footer class="major">
+				<footer class="major">
 					<ul class="actions special">
-						<li><a href="tournaments.html" class="button">View Results</a></li>
+						<li><a class="button dropbtn" onclick="togglePastTournaments()">View Past Results</a></li>
+						<div id="pastTournaments" class="dropdown-content"></div>
 					</ul>
-				</footer> -->
+					
+				</footer>
 			</section>
 
 			<!-- Second Section -->
@@ -199,20 +201,53 @@
 		});
 
 		//loop through tournaments
-		var tournamentDiv = document.getElementById("recentTournaments");
+		let tournamentDiv = document.getElementById("recentTournaments");
+		let pastTournamentsDiv = document.getElementById("pastTournaments");
 		$.getJSON("./tournaments.json", function(data) {
 			data.forEach((tournament, index)=> {
-				var li = document.createElement('li');
-				li.onclick = () => goTo('./tournaments/'+tournament.file);
-				//li.innerHTML = "<a href='./tournaments/"+tournament.file+"' target='_blank'>"+tournament.name+"</a>";
-				li.innerHTML = tournament.name;
+				let pastTournamentDate = new Date();
+				pastTournamentDate.setMonth(pastTournamentDate.getMonth() - 3);
 
-				tournamentDiv.appendChild(li);
+				if(new Date(tournament.date) > pastTournamentDate) {
+
+					var li = document.createElement('li');
+					li.onclick = () => goTo('./tournaments/'+tournament.file);
+					//li.innerHTML = "<a href='./tournaments/"+tournament.file+"' target='_blank'>"+tournament.name+"</a>";
+					li.innerHTML = tournament.name;
+
+					tournamentDiv.appendChild(li);
+				}
+				else {
+					var aTag = document.createElement('a');
+					aTag.href = './tournaments/'+tournament.file;
+					aTag.target = '_blank';
+					aTag.innerHTML = tournament.name;
+
+					pastTournamentsDiv.appendChild(aTag);
+				}
 			})
 		});
 
 		function goTo(url) {
 			window.open(url, '_blank').focus();
+		}
+
+		function togglePastTournaments() {
+			document.getElementById("pastTournaments").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+				var openDropdown = dropdowns[i];
+				if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				}
+				}
+			}
 		}
 
 
