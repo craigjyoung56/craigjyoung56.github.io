@@ -59,9 +59,16 @@
 
   .grid-item img {
 	width:125px;
-	margin-bottom: 125px;
+	margin-bottom: 125px;	
   }
 
+  #recentTournaments li {
+	border: 1px solid black;
+	padding-top: 16px;
+  	padding-bottom: 16px;
+	cursor: pointer;
+	font-weight: bolder;
+  }
 
 
   /*
