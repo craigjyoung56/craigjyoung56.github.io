@@ -77,9 +77,12 @@
 					<h2>Tournaments</h2>
 				</header>
 				<!-- <h3>Recent Tournaments</h3> -->
-				<ul class="features" id="recentTournaments">
-					<li><a>2024 Schedule</a></li>
-					<li><a>2024 Results</a></li>
+				<ul class="features" id="tournaments" >
+					<li><a href="./documents/Tournament Schedule 2024.docx" target="_blank">2024 Schedule</a></li>
+					<li onclick="toggleRecentTournaments()">
+						<a class="dropbtn">2024 Results</a>
+						<div id="recentTournaments" class="dropdown-content"></div>
+					</li>
 					<li onclick="togglePastTournaments()">
 						<a class="dropbtn">View Past Results</a>
 						<div id="pastTournaments" class="dropdown-content"></div>
@@ -211,18 +214,26 @@
 		let tournamentDiv = document.getElementById("recentTournaments");
 		let pastTournamentsDiv = document.getElementById("pastTournaments");
 		$.getJSON("./tournaments.json", function(data) {
-			data.forEach((tournament, index)=> {
+			data.sort((a,b) => { return new Date(b.date) - new Date(a.date); }).forEach((tournament, index)=> {
 				let pastTournamentDate = new Date();
 				pastTournamentDate.setMonth(pastTournamentDate.getMonth() - 3);
 
-				if(new Date(tournament.date) > pastTournamentDate) {
+				//if tournament is from this year
+				if(new Date(tournament.date).getUTCFullYear() === new Date().getUTCFullYear()) {
 
-					var li = document.createElement('li');
-					li.onclick = () => goTo('./tournaments/'+tournament.file);
-					//li.innerHTML = "<a href='./tournaments/"+tournament.file+"' target='_blank'>"+tournament.name+"</a>";
-					li.innerHTML = tournament.name;
+					// var li = document.createElement('li');
+					// li.onclick = () => goTo('./tournaments/'+tournament.file);
+					// //li.innerHTML = "<a href='./tournaments/"+tournament.file+"' target='_blank'>"+tournament.name+"</a>";
+					// li.innerHTML = tournament.name;
 
-					tournamentDiv.appendChild(li);
+					// tournamentDiv.appendChild(li);
+
+					var aTag = document.createElement('a');
+					aTag.href = './tournaments/'+tournament.file;
+					aTag.target = '_blank';
+					aTag.innerHTML = tournament.name;
+
+					tournamentDiv.appendChild(aTag);	
 				}
 				else {
 					var aTag = document.createElement('a');
@@ -237,6 +248,10 @@
 
 		function goTo(url) {
 			window.open(url, '_blank').focus();
+		}
+
+		function toggleRecentTournaments() {
+			document.getElementById("recentTournaments").classList.toggle("show");
 		}
 
 		function togglePastTournaments() {
@@ -258,6 +273,7 @@
 		}
 
 
+		//shwo gallery
 		var folder = "images/gallery/";
 		var galleryDiv = document.getElementsByClassName("slideshow-container")[0];
 		$.ajax({
