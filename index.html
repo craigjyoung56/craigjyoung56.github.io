@@ -76,17 +76,24 @@
 				<header class="major">
 					<h2>Tournaments</h2>
 				</header>
-				<h3>Recent Tournaments</h3>
+				<!-- <h3>Recent Tournaments</h3> -->
 				<ul class="features" id="recentTournaments">
+					<li><a>2024 Schedule</a></li>
+					<li><a>2024 Results</a></li>
+					<li onclick="togglePastTournaments()">
+						<a class="dropbtn">View Past Results</a>
+						<div id="pastTournaments" class="dropdown-content"></div>
+					</li>					
+					<li><a>Tee Times</a></li>
 					
 				</ul>				
-				<footer class="major">
+				<!-- <footer class="major">
 					<ul class="actions special">
 						<li><a class="button dropbtn" onclick="togglePastTournaments()">View Past Results</a></li>
 						<div id="pastTournaments" class="dropdown-content"></div>
 					</ul>
 					
-				</footer>
+				</footer> -->
 			</section>
 
 			<!-- Second Section -->
@@ -223,7 +230,7 @@
 					aTag.target = '_blank';
 					aTag.innerHTML = tournament.name;
 
-					pastTournamentsDiv.appendChild(aTag);
+					pastTournamentsDiv.appendChild(aTag);					
 				}
 			})
 		});

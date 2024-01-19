@@ -93,10 +93,10 @@ var board = {
         },
         {
             "title": "Website",
-            "name": "Saran Atwal",
-            "phone": "(818) 606-8037",
-            "email": "saranatwal@hotmail.com",
-            "img": "./images/member_photos/saran_atwal.jpg"
+            "name": "John Babin",
+            "phone": "(818) 683-3137",
+            "email": "teambabin1@charter.net",
+            "img": "./images/member_photos/john_babin.jpg"
         },
         {
             "title": "Assist Treasurer",

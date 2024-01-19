@@ -78,8 +78,6 @@
 	overflow: auto;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
-	margin-top: 64px;
-	margin-right: 40px;
   }
 
   .show {display: block;}
@@ -285,10 +283,10 @@ input, select, textarea {
 		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 		background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%); */
-		background-image: url("../../images/hole5.jpeg");
+		background-image: url("../../images/background.jpeg");
 		background-size: cover;
 		background-repeat: no-repeat;
-		background-position: center; 
+		/* background-position: center;  */
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
