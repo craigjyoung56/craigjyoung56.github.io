@@ -78,16 +78,17 @@
 				</header>
 				<!-- <h3>Recent Tournaments</h3> -->
 				<ul class="features" id="tournaments" >
-					<li><a href="./documents/Tournament Schedule 2024.docx" target="_blank">2024 Schedule</a></li>
-					<li onclick="toggleRecentTournaments()">
+					<li id="tournamentSchedule" onclick="goTo('./documents/Tournament Schedule 2024.docx')">2024 Schedule</li>
+
+					<!-- <li onclick="toggleRecentTournaments()">
 						<a class="dropbtn">2024 Results</a>
 						<div id="recentTournaments" class="dropdown-content"></div>
-					</li>
-					<li onclick="togglePastTournaments()">
+					</li> -->
+
+					<li id="pastSchedule" onclick="togglePastTournaments()">
 						<a class="dropbtn">View Past Results</a>
 						<div id="pastTournaments" class="dropdown-content"></div>
 					</li>					
-					<li><a>Tee Times</a></li>
 					
 				</ul>				
 				<!-- <footer class="major">
@@ -102,7 +103,7 @@
 			<!-- Second Section -->
 			<section id="second" class="main special">
 				<header class="major">
-					<h2>BSMGC Board of Directors</h2>
+					<h2 onclick="toggleBoard()">BSMGC Board of Directors</h2>
 				</header>
 				<div id="boardList" class="grid-container">
 				</div>
@@ -212,32 +213,34 @@
 
 		//loop through tournaments
 		let tournamentDiv = document.getElementById("recentTournaments");
+		let tournamentSchedule = document.getElementById("tournamentSchedule");
+		let pastSchedule = document.getElementById("pastSchedule");
 		let pastTournamentsDiv = document.getElementById("pastTournaments");
 		$.getJSON("./tournaments.json", function(data) {
-			data.sort((a,b) => { return new Date(b.date) - new Date(a.date); }).forEach((tournament, index)=> {
+			data.sort((a,b) => { return new Date(a.date) - new Date(b.date); }).forEach((tournament, index)=> {
 				let pastTournamentDate = new Date();
 				pastTournamentDate.setMonth(pastTournamentDate.getMonth() - 3);
 
 				//if tournament is from this year
 				if(new Date(tournament.date).getUTCFullYear() === new Date().getUTCFullYear()) {
 
-					// var li = document.createElement('li');
-					// li.onclick = () => goTo('./tournaments/'+tournament.file);
-					// //li.innerHTML = "<a href='./tournaments/"+tournament.file+"' target='_blank'>"+tournament.name+"</a>";
-					// li.innerHTML = tournament.name;
+					var li = document.createElement('li');
+					li.onclick = () => goTo('./tournaments/'+tournament.results);
+					//li.innerHTML = "<a href='./tournaments/"+tournament.file+"' target='_blank'>"+tournament.name+"</a>";
+					li.innerHTML = tournament.name;
 
-					// tournamentDiv.appendChild(li);
+					pastSchedule.before(li);
 
-					var aTag = document.createElement('a');
-					aTag.href = './tournaments/'+tournament.file;
-					aTag.target = '_blank';
-					aTag.innerHTML = tournament.name;
+					// var aTag = document.createElement('a');
+					// aTag.href = './tournaments/'+tournament.file;
+					// aTag.target = '_blank';
+					// aTag.innerHTML = tournament.name;
 
-					tournamentDiv.appendChild(aTag);	
+					// tournamentDiv.appendChild(aTag);	
 				}
 				else {
 					var aTag = document.createElement('a');
-					aTag.href = './tournaments/'+tournament.file;
+					aTag.href = './tournaments/'+tournament.results;
 					aTag.target = '_blank';
 					aTag.innerHTML = tournament.name;
 
@@ -245,6 +248,10 @@
 				}
 			})
 		});
+
+		function toggleBoard() {
+			$('#boardList').slideToggle('slow');
+		}
 
 		function goTo(url) {
 			window.open(url, '_blank').focus();
@@ -273,7 +280,7 @@
 		}
 
 
-		//shwo gallery
+		//show gallery
 		var folder = "images/gallery/";
 		var galleryDiv = document.getElementsByClassName("slideshow-container")[0];
 		$.ajax({

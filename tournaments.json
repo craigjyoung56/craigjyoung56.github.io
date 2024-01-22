@@ -1,32 +1,121 @@
-[
-    {
-        "name": "January 2024 Results",
-        "date": "1/4/2024",
-        "file": "Winners 01-04-24.pdf"
-    },
+[    
     {
         "name": "December 2023",
         "date": "12/1/2023",
-        "file": "Winners 01-04-24.pdf"
+        "entryForm": "",
+        "teeTime": "",
+        "results": "Winners 01-04-24.pdf"
     },
     {
         "name": "November 2023",
         "date": "11/4/2023",
-        "file": "Winners 01-04-24.pdf"
+        "entryForm": "",
+        "teeTime": "",
+        "results": "Winners 01-04-24.pdf"
     },
     {
         "name": "October 2023",
         "date": "10/4/2023",
-        "file": "Winners 01-04-24.pdf"
+        "entryForm": "",
+        "teeTime": "",
+        "results": "Winners 01-04-24.pdf"
     },
     {
         "name": "September 2023",
         "date": "9/4/2023",
-        "file": "Winners 01-04-24.pdf"
+        "entryForm": "",
+        "teeTime": "",
+        "results": "Winners 01-04-24.pdf"
     },
     {
         "name": "August 2023",
         "date": "8/4/2023",
-        "file": "Winners 01-04-24.pdf"
+        "entryForm": "",
+        "teeTime": "",
+        "results": "Winners 01-04-24.pdf"
+    },
+    {
+        "name": "January 2024",
+        "date": "1/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": "Winners 01-04-24.pdf"
+    },
+    {
+        "name": "February 2024",
+        "date": "2/1/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "March 2024",
+        "date": "3/1/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "April 2024",
+        "date": "4/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "May 2024",
+        "date": "5/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "June 2024",
+        "date": "6/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "July 2024",
+        "date": "7/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "August 2024",
+        "date": "8/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "September 2024",
+        "date": "9/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "October 2024",
+        "date": "10/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "November 2024",
+        "date": "11/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
+    },
+    {
+        "name": "December 2024",
+        "date": "12/4/2024",
+        "entryForm": "",
+        "teeTime": "",
+        "results": ""
     }
 ]
