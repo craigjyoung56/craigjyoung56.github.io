@@ -7,6 +7,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -102,9 +103,9 @@
 			<!-- Second Section -->
 			<section id="second" class="main special">
 				<header class="major">
-					<h2 onclick="toggleBoard()" class="boardTitle">BSMGC Board of Directors</h2>
+					<h2><span class="boardTitle" onclick="toggleBoard()">BSMGC Board of Directors<i class="material-icons" id="boardExpand">add</i></span></h2>
 				</header>
-				<div id="boardList" class="grid-container">
+				<div id="boardList" class="grid-container" style="display:none;">
 				</div>
 				<!-- <footer class="major">
 									<ul class="actions special">
@@ -145,7 +146,7 @@
 		</div>
 
 		<!-- Footer -->
-		<footer id="footer">
+		<!-- <footer id="footer">
 			<section>
 				<h2>Aliquam sed mauris</h2>
 				<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam
@@ -174,7 +175,7 @@
 				</ul>
 			</section>
 			<p class="copyright">&copy; 2023 BSMGC</p>
-		</footer>
+		</footer> -->
 
 	</div>
 
@@ -241,7 +242,7 @@
 					}
 					else {
 						tLabel = "Entry Form"
-						li.onclick = () => goTo('./entryForm');
+						li.onclick = () => goTo('./tournament-entryForm');
 						li.style = "background-color:#ede3d0";
 					}
 
@@ -270,6 +271,7 @@
 
 		function toggleBoard() {
 			$('#boardList').slideToggle('slow');
+			$('#boardExpand').fadeToggle('slow');
 		}
 
 		function goTo(url) {

@@ -104,8 +104,23 @@
 	display: block;
   }
 
+  /* #boardList {
+	display:none;
+  } */
+
   .boardTitle {
 	cursor: pointer !important;
+	position: relative;
+  }
+
+  .board-container {
+	display:none !important;
+  }
+
+  #boardExpand {
+	position: absolute;
+    top: 20px;
+    padding-left: 12px;
   }
 
   .tournament-label {
