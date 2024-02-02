@@ -21,7 +21,6 @@
 		<header id="header" class="alt">
 			<!-- <span class="logo"><img src="images/logo.svg" alt="" /></span> -->
 			<h1>Burbank Senior Men's Golf Club</h1>
-			<p>[Brief description can go here]</p>
 		</header>
 
 		<!-- Nav -->
@@ -78,7 +77,7 @@
 				</header>
 				<!-- <h3>Recent Tournaments</h3> -->
 				<ul class="features" id="tournaments" >
-					<li id="tournamentSchedule" onclick="goTo('./documents/Tournament Schedule 2024.docx')">2024 Schedule</li>
+					<li id="tournamentSchedule" onclick="goTo('./documents/Tournament Schedule 2024.pdf')">2024 Schedule</li>
 
 					<!-- <li onclick="toggleRecentTournaments()">
 						<a class="dropbtn">2024 Results</a>
@@ -103,7 +102,7 @@
 			<!-- Second Section -->
 			<section id="second" class="main special">
 				<header class="major">
-					<h2 onclick="toggleBoard()">BSMGC Board of Directors</h2>
+					<h2 onclick="toggleBoard()" class="boardTitle">BSMGC Board of Directors</h2>
 				</header>
 				<div id="boardList" class="grid-container">
 				</div>
@@ -224,10 +223,30 @@
 				//if tournament is from this year
 				if(new Date(tournament.date).getUTCFullYear() === new Date().getUTCFullYear()) {
 
-					var li = document.createElement('li');
-					li.onclick = () => goTo('./tournaments/'+tournament.results);
-					//li.innerHTML = "<a href='./tournaments/"+tournament.file+"' target='_blank'>"+tournament.name+"</a>";
-					li.innerHTML = tournament.name;
+					var li = document.createElement('li');	
+
+					var tLabel = "";
+					if(tournament.name.toLowerCase().includes('cancel') ) {
+						li.style = "background-color:#ff0000c7; color:white;"
+					}
+					else if(tournament.results) {
+						tLabel = "Results"
+						li.onclick = () => goTo('./tournaments/'+tournament.results);
+						li.style = "background-color:#00800029";
+					}
+					else if (tournament.teeTimes) {
+						tLabel = "Tee Times"
+						li.onclick = () => goTo('./tournaments/'+tournament.teeTimes);
+						li.style = "background-color:#9d9df13d";
+					}
+					else {
+						tLabel = "Entry Form"
+						li.onclick = () => goTo('./entryForm');
+						li.style = "background-color:#ede3d0";
+					}
+
+					
+					li.innerHTML = `${tournament.name} <span class='tournament-label'>${tLabel}</span>`;
 
 					pastSchedule.before(li);
 

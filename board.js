@@ -4,7 +4,7 @@ var board = {
             "title": "President",
             "name": "Bruce Smentek",
             "phone": "(805) 368-0414",
-            "email": "smetnek31@yahoo.com",
+            "email": "smentek31@yahoo.com",
             "img": "./images/member_photos/Bruce.jpeg"
         },
         {
@@ -17,7 +17,7 @@ var board = {
         {
             "title": "Secretary",
             "name": "Don Ludwig",
-            "phone": "(818) 846-8943",
+            "phone": "(818) 425-9268",
             "email": "ludwig@usc.edu",
             "img": "./images/member_photos/don_ludwig.jpg"
         },
@@ -29,7 +29,7 @@ var board = {
             "img": ""
         },
         {
-            "title": "Tournaments",
+            "title": "Tournaments/Members",
             "name": "Peter Hendrickson",
             "phone": "(818) 846-1812",
             "email": "l8sleeper@earthlink.net",
@@ -63,13 +63,13 @@ var board = {
             "email": "johnshannon422@gmail.com",
             "img": "./images/member_photos/john_shannon.jpg"
         },
-        {
-            "title": "Membership",
-            "name": "Peter Hendrickson",
-            "phone": "(818) 846-1812",
-            "email": "l8sleeper@earthlink.net",
-            "img": "./images/member_photos/peter_hendrickson.jpeg"
-        },
+        // {
+        //     "title": "Membership",
+        //     "name": "Peter Hendrickson",
+        //     "phone": "(818) 846-1812",
+        //     "email": "l8sleeper@earthlink.net",
+        //     "img": "./images/member_photos/peter_hendrickson.jpeg"
+        // },
         {
             "title": "Inter-Club Play",
             "name": "Neal Martin",
