@@ -1,120 +1,137 @@
-[    
+[        
     {
-        "name": "December 2023",
-        "date": "12/1/2023",
-        "entryForm": "",
-        "teeTimes": "",
-        "results": "Winners 01-04-24.pdf"
-    },
-    {
-        "name": "November 2023",
-        "date": "11/4/2023",
-        "entryForm": "",
-        "teeTimes": "",
-        "results": "Winners 01-04-24.pdf"
-    },
-    {
-        "name": "October 2023",
-        "date": "10/4/2023",
-        "entryForm": "",
-        "teeTimes": "",
-        "results": "Winners 01-04-24.pdf"
-    },
-    {
-        "name": "September 2023",
-        "date": "9/4/2023",
-        "entryForm": "",
-        "teeTimes": "",
-        "results": "Winners 01-04-24.pdf"
-    },
-    {
-        "name": "August 2023",
-        "date": "8/4/2023",
-        "entryForm": "",
-        "teeTimes": "",
-        "results": "Winners 01-04-24.pdf"
-    },
-    {
-        "name": "January",
+        "title": "January",
+        "description": "Low Net",
         "date": "1/4/2024",
-        "entryForm": "",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": "Winners 01-04-24.pdf"
     },
     {
-        "name": "February",
+        "title": "February Cancelled",
+        "description": "",
         "date": "2/1/2024",
-        "entryForm": "",
-        "teeTimes": "teeTimes.pdf",
-        "results": ""
-    },
-    {
-        "name": "March",
-        "date": "3/1/2024",
-        "entryForm": "",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     },
     {
-        "name": "April",
+        "title": "Round 1 Champions",
+        "description": "",
+        "date": "3/14/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
+        "teeTimes": "",
+        "results": ""
+    },
+    {
+        "title": "Round 2 Champions",
+        "description": "",
+        "date": "3/21/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
+        "teeTimes": "",
+        "results": ""
+    },
+    {
+        "title": "April",
+        "description": "Low Net",
         "date": "4/4/2024",
-        "entryForm": "",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     },
     {
-        "name": "May",
-        "date": "5/4/2024",
-        "entryForm": "",
+        "title": "Mid April Away",
+        "description": "TBD",
+        "date": "4/15/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     },
     {
-        "name": "June",
-        "date": "6/4/2024",
-        "entryForm": "",
+        "title": "May",
+        "description": "Low Net",
+        "date": "5/2/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     },
     {
-        "name": "July Cancelled",
-        "date": "7/4/2024",
-        "entryForm": "",
+        "title": "June",
+        "description": "Partners Best Ball",
+        "date": "6/6/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     },
     {
-        "name": "August",
-        "date": "8/4/2024",
-        "entryForm": "",
+        "title": "July",
+        "description": "Red White and Blue Team Scramble",
+        "date": "7/11/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     },
     {
-        "name": "September",
-        "date": "9/4/2024",
-        "entryForm": "",
+        "title": "August",
+        "description": "Low Net",
+        "date": "8/1/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     },
     {
-        "name": "October",
-        "date": "10/4/2024",
-        "entryForm": "",
+        "title": "Mid August Away",
+        "description": "TBD",
+        "date": "8/15/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     },
     {
-        "name": "November",
-        "date": "11/4/2024",
-        "entryForm": "",
+        "title": "September",
+        "description": "Match Play",
+        "date": "9/1/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     },
     {
-        "name": "December",
-        "date": "12/4/2024",
-        "entryForm": "",
+        "title": "September",
+        "description": "Low Net",
+        "date": "9/5/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
+        "teeTimes": "",
+        "results": ""
+    },
+    {
+        "title": "October",
+        "description": "Low Net",
+        "date": "10/3/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
+        "teeTimes": "",
+        "results": ""
+    },
+    {
+        "title": "Mid October Away",
+        "description": "TBD",
+        "date": "10/15/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
+        "teeTimes": "",
+        "results": ""
+    },
+    {
+        "title": "November",
+        "description": "Low Net",
+        "date": "11/7/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
+        "teeTimes": "",
+        "results": ""
+    },
+    {
+        "title": "Santa Team Scramble",
+        "description": "",
+        "date": "12/5/2024",
+        "entryForm": "Burbank Senior Men Entry Form.docx",
         "teeTimes": "",
         "results": ""
     }

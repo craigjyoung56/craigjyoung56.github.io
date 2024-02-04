@@ -59,7 +59,7 @@
 
   .grid-item img {
 	width:125px;
-	margin-bottom: 125px;	
+	margin-bottom: 150px;	
   }
 
   #tournaments {
@@ -83,6 +83,7 @@
 	font-weight: bolder;
 	position: relative;
 	font-size:24px;
+	height: 80px;
   }
 
   .dropdown-content {
@@ -123,11 +124,26 @@
     padding-left: 12px;
   }
 
-  .tournament-label {
+  .tournament-description {
 	position:absolute;
 	font-size:12px;
 	bottom:0px;
-	right:4px;
+	right:0px;
+	width:100%
+  }
+
+  .tournament-title {
+	position:absolute;
+	top:10px;
+	right:0px;
+	width:100%
+  }
+
+  .tournament-date {
+	position:absolute;
+	top:-2px;
+	right:2px;	
+	font-size:14px;
   }
 
 
@@ -3310,7 +3326,7 @@ input, select, textarea {
 		}
 
 		#header.alt {
-			padding: 7em 5em 4em 5em ;
+			padding: 5em 5em 4em 5em ;
 		}
 
 			#header.alt h1 {
@@ -3914,7 +3930,7 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		padding: 5em 5em 3em 5em ;
+		padding: 3em 5em 3em 5em ;
 		width: calc(100% + 2em);
 		margin: 0 0 3em -2em;
 	}
@@ -3929,6 +3945,8 @@ input, select, textarea {
 			margin: 2.5em 0 2em 0;
 			font-size: 0.8em;
 			text-align: center;
+			font-weight: 400;		
+			color:white;	
 		}
 
 		@media screen and (max-width: 1280px) {
