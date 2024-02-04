@@ -3491,6 +3491,10 @@ input, select, textarea {
 			color: #636363;
 		}
 
+		#nav a {
+			cursor:pointer;
+		}
+
 		#nav a:hover {
 			color: #636363;
 		}
