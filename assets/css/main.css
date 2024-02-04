@@ -7,6 +7,12 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+section:not(.activeTab) {
+	display: none !important;
+}
+
+
+
 .grid-container {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
@@ -94,6 +100,8 @@
 	overflow: auto;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
+	top: 50px;
+  	right: 25%;
   }
 
   .show {display: block;}
@@ -104,6 +112,17 @@
 	text-decoration: none;
 	display: block;
   }
+
+  .dropdown-content .disabled {
+	color:grey !important;
+	cursor:default !important;
+  }
+
+  .dropdown-content a:not(.disabled):hover {background-color: #ddd;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
 
   /* #boardList {
 	display:none;
@@ -3326,7 +3345,7 @@ input, select, textarea {
 		}
 
 		#header.alt {
-			padding: 5em 5em 4em 5em ;
+			padding: 2em 5em 2em 5em ;
 		}
 
 			#header.alt h1 {
@@ -3821,7 +3840,7 @@ input, select, textarea {
 		}
 
 		#main > .main {
-			padding: 5em 5em 3em 5em ;
+			padding: 2em 5em 3em 5em ;
 			border-top: solid 1px #dddddd;
 		}
 
