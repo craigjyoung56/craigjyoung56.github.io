@@ -18,6 +18,18 @@
 	<!-- Wrapper -->
 	<div id="wrapper">
 
+		<!--Menu for phones-->
+		<div id="menu">
+			<button  onclick="showMenu()"><i id="menuBtn" class="material-icons">menu</i></button>
+			<div class="dropdown-options">
+				<a onclick="goToTab(event, 'info')">Info</a>
+				<a onclick="goToTab(event, 'tournaments')">Tournaments</a>
+				<a onclick="goToTab(event, 'board')">The Board</a>
+				<a onclick="goToTab(event, 'gallery')">Gallery</a>
+				<a onclick="goToTab(event, 'notes')">Notes</a>
+			</div>
+		</div>
+
 		<!-- Header -->
 		<header id="header" class="alt">
 			<!-- <span class="logo"><img src="images/logo.svg" alt="" /></span> -->
@@ -86,10 +98,6 @@
 				<ul class="features" id="tournaments" >
 					<li id="tournamentSchedule" onclick="goTo('./documents/Tournament Schedule 2024.pdf')">2024 Schedule</li>
 
-					<!-- <li onclick="toggleRecentTournaments()">
-						<a class="dropbtn">2024 Results</a>
-						<div id="recentTournaments" class="dropdown-content"></div>
-					</li> -->
 
 					<li id="pastSchedule" onclick="togglePastTournaments()">
 						<a class="dropbtn">View Past Results</a>
@@ -97,13 +105,6 @@
 					</li>					
 					
 				</ul>				
-				<!-- <footer class="major">
-					<ul class="actions special">
-						<li><a class="button dropbtn" onclick="togglePastTournaments()">View Past Results</a></li>
-						<div id="pastTournaments" class="dropdown-content"></div>
-					</ul>
-					
-				</footer> -->
 			</section>
 
 			<!-- Second Section -->
@@ -136,12 +137,6 @@
 					<span class="dot" onclick="currentSlide(3)"></span>
 				</div>
 
-				<!-- <footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button primary">Get Started</a></li>
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer> -->
 			</section>
 
 			<!-- Get Started -->
@@ -173,6 +168,11 @@
 	<script type="text/javascript" language="javascript" src="gallery.js"></script>
 
 	<script>
+
+		function showMenu() {
+			$('.dropdown-options').slideToggle();
+		}
+
 		//get board member div
 		var boardDiv = document.getElementById("boardList");
 
@@ -306,6 +306,23 @@
 					openDropdown.classList.remove('show');
 				}
 				}
+			}
+
+
+			if (!event.target.matches('#menuBtn')) {
+
+				if ($(".dropdown-options").is(":visible")) {
+					$('.dropdown-options').slideUp();
+				}
+
+				// var dropdowns = document.getElementsByClassName("dropdown-options");
+				// var i;
+				// for (i = 0; i < dropdowns.length; i++) {
+				// 	var openDropdown = dropdowns[i];
+				// 	if (openDropdown.classList.contains('show')) {
+				// 		openDropdown.classList.remove('show');
+				// 	}
+				// }
 			}
 		}
 

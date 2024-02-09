@@ -5,7 +5,7 @@ var board = {
             "name": "Bruce Smentek",
             "phone": "(805) 368-0414",
             "email": "smentek31@yahoo.com",
-            "img": "./images/member_photos/Bruce.jpeg"
+            "img": "./images/member_photos/Bruce_Smentek.jpg"
         },
         {
             "title": "Vice President",
@@ -26,7 +26,7 @@ var board = {
             "name": "Steve Sutliff",
             "phone": "(818) 261-4137",
             "email": "stevesutliff@sbcglobal.net",
-            "img": ""
+            "img": "./images/member_photos/Steve_Sutliff.jpg"
         },
         {
             "title": "Tournaments/Members",
