@@ -62,13 +62,13 @@
 					<div class="content">
 						<header class="major">
 							<ul class="actions">
-								<li><a href="https://bsmgc.club/gallery/gallery-bsmgc_bylaws_15.pdf" target="_blank"
+								<li><a href="./documents/bsmgc_bylaws.pdf" target="_blank"
 										class="button">BSMGC Bylaws</a></li>
-								<li><a href="https://bsmgc.club/gallery/bsmgc_history.pdf" target="_blank"
+								<li><a href="./documents/bsmgc_history.pdf" target="_blank"
 										class="button">History</a></li>
-								<li><a href="https://bsmgc.club/gallery/Rules_August_2023.pdf" target="_blank"
+								<li><a href="./documents/Rules_August_2023.pdf" target="_blank"
 										class="button">Local Rules</a></li>
-								<li><a href="https://bsmgc.club/gallery/Hole_out_rules.pdf" target="_blank"
+								<li><a href="./documents/Hole_out_rules.pdf" target="_blank"
 										class="button">Urgent News</a></li>
 							</ul>
 						</header>
@@ -81,13 +81,34 @@
 							All applicants agree to abide by the Rules and Regulations set forth by the City of Burbank
 							for the Burbank Senior Men’s Golf Club.</p>
 						<ul class="actions">
-							<li><a href="generic.html" class="button primary">Join / Renew Now</a></li>
+							<li><a onclick="toggleJoinModal()" class="button primary" style="font-weight:initial">Join / Renew Now</a></li>
 							<li><a href="https://www.debellgolf.com/" class="button">DeBell Golf CLub</a></li>
 							<li><a href="https://www.ghin.com/login" class="button">GHIN-USA</a></li>
 						</ul>
 					</div>
 				</div>
 			</section>
+
+			<!-- The Modal -->
+			<div id="joinModal" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<h3>BSMGC Renewal / Join via SCGA </h3>
+					<div>
+						<button onclick='goTo("https://membership.scga.org/start/join/?id=173")'>
+							SGCA - Southern California Golf Association
+						</button>
+					</br>
+					</br>
+						<button onclick="goTo('./documents/gallery-bsmgc_application.pdf')">
+							Print & Mail to BSMGC
+						</button>
+					</div>
+				</div>
+			
+			</div>
 
 			<!-- First Section -->
 			<section id="tournaments" class="main special">
@@ -147,7 +168,7 @@
 				<header class="major">
 					<h2>Notes</h2>
 				</header>
-				<embed type="application/pdf" src="https://bsmgc.club/gallery/UpdateNotes.pdf#toolbar=0&navpanes=0&scrollbar=0" width="90%" height="800"></object>
+				<embed type="application/pdf" src="./documents/UpdateNotes.pdf#toolbar=0&navpanes=0&scrollbar=0" width="90%" height="800"></object>
 			</section>
 
 		</div>
@@ -175,6 +196,19 @@
 		function showMenu() {
 			$('.dropdown-options').slideToggle();
 		}
+
+		// Get the modal
+		var modal = document.getElementById("joinModal");
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+		function toggleJoinModal() {
+			modal.style.display = "block";
+		}
+
 
 		//get board member div
 		var boardDiv = document.getElementById("boardList");
@@ -326,6 +360,11 @@
 				// 		openDropdown.classList.remove('show');
 				// 	}
 				// }
+			}
+
+
+			if (event.target == modal) {
+				modal.style.display = "none";
 			}
 		}
 
