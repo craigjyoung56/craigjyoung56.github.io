@@ -8,7 +8,7 @@ section:not(.activeTab) {
 }
 
 #menu {
-	display: none;
+	/* display: none; */
 	position: absolute;
 	margin-top: 8px;
 }
@@ -446,7 +446,7 @@ input, select, textarea {
 		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 		background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%); */
 		background-image: url("../../images/background.jpeg");
-		background-size: cover;
+		background-size: auto;
 		background-repeat: no-repeat;
 		/* background-position: center;  */
 	}
@@ -2981,6 +2981,11 @@ input, select, textarea {
 		text-align: center;
 	}
 
+	header {
+		
+		font-family: Brush Script MT, Brush Script Std, cursive;
+	}
+
 	header.major {
 		margin-bottom: 2em;
 	}
@@ -3435,7 +3440,7 @@ input, select, textarea {
 		}
 
 			#header.alt h1 {
-				font-size: 3.25em;
+				font-size: 5.25em;
 			}
 
 			#header.alt > * {
@@ -3668,7 +3673,7 @@ input, select, textarea {
 					font-size: 0.9em;
 				}
 
-		@media screen and (max-width: 736px) {
+		/* @media screen and (max-width: 736px) {
 
 			#nav {
 				display: none;
@@ -3682,12 +3687,20 @@ input, select, textarea {
 				display: unset;
 			}
 
-		}
+		} */
+
+section {
+	background-color: #ffffff;
+}
+
+#default {
+	height: 500px;
+	background-color: transparent !important;
+}
 
 /* Main */
 
-	#main {
-		background-color: #ffffff;
+	#main {		
 		color: #636363;
 		border-radius: 0.25em;
 	}
