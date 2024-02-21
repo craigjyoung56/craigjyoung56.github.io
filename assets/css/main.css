@@ -2981,7 +2981,7 @@ input, select, textarea {
 		text-align: center;
 	}
 
-	header {
+	.banner h1 {
 		
 		font-family: Brush Script MT, Brush Script Std, cursive;
 	}
