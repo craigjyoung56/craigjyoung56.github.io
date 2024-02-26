@@ -20,7 +20,8 @@
 
 		<!--Menu for phones-->
 		<div id="menu">
-			<button  onclick="showMenu()"><i id="menuBtn" class="material-icons">menu</i></button>
+			<!-- <button  onclick="showMenu()"><i id="menuBtn" class="material-icons">menu</i></button> -->
+			<button id="menuBtn" onclick="showMenu()"><span >Menu</span></button>
 			<div class="dropdown-options">
 				<a onclick="goToTab(event, 'info')">Info</a>
 				<a onclick="goToTab(event, 'tournaments')">Tournaments</a>
@@ -72,14 +73,14 @@
 										class="button">Urgent News</a></li>
 							</ul>
 						</header>
-						<p>Any person 50 years of age or older is eligible for membership to the Burbank Senior Men’s
+						<p>Any person 50 years of age or older is eligible for membership to the Burbank Senior Men's
 							Golf Club.<br>
 							Membership dues are $65.00 annually.<br>
 							Official USGA Handicap is used and home tournaments are usually held on the first Thursday
 							of each month with a shotgun start at 8:00 am. <br>
 							Your application is subject to acceptance as provided in the bylaws for the BCMGC.<br>
 							All applicants agree to abide by the Rules and Regulations set forth by the City of Burbank
-							for the Burbank Senior Men’s Golf Club.</p>
+							for the Burbank Senior Men's Golf Club.</p>
 						<ul class="actions">
 							<li><a onclick="toggleJoinModal()" class="button primary" style="font-weight:initial">Join / Renew Now</a></li>
 							<li><a href="https://www.debellgolf.com/" class="button">DeBell Golf CLub</a></li>
@@ -155,11 +156,11 @@
 				<br>
 
 				<!-- The dots/circles -->
-				<div style="text-align:center">
+				<!-- <div style="text-align:center">
 					<span class="dot" onclick="currentSlide(1)"></span>
 					<span class="dot" onclick="currentSlide(2)"></span>
 					<span class="dot" onclick="currentSlide(3)"></span>
-				</div>
+				</div> -->
 
 			</section>
 
@@ -189,9 +190,25 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script type="text/javascript" language="javascript" src="board.js"></script>
-	<script type="text/javascript" language="javascript" src="gallery.js"></script>
 
 	<script>
+
+		window.onbeforeunload = function () {
+			window.scrollTo(0, 0);
+		}
+
+		//dont load gallery images until they're visible
+		// $(function () {
+		// 	$("img").not(":visible").each(function () {				
+		// 		$(this).data("src", this.src);
+		// 		this.src = "";
+		// 	});
+
+		// 	var reveal = function (selector) {
+		// 		var img = $(selector);
+		// 		img[0].src = img.data("src");
+		// 	}
+		// });
 
 		function showMenu() {
 			$('.dropdown-options').slideToggle();
@@ -346,20 +363,12 @@
 			}
 
 
-			if (!event.target.matches('#menuBtn')) {
-
+			var menu = document.getElementById('menuBtn');
+			if (!menu.contains(event.target)) {
+			
 				if ($(".dropdown-options").is(":visible")) {
 					$('.dropdown-options').slideUp();
 				}
-
-				// var dropdowns = document.getElementsByClassName("dropdown-options");
-				// var i;
-				// for (i = 0; i < dropdowns.length; i++) {
-				// 	var openDropdown = dropdowns[i];
-				// 	if (openDropdown.classList.contains('show')) {
-				// 		openDropdown.classList.remove('show');
-				// 	}
-				// }
 			}
 
 
@@ -368,9 +377,14 @@
 			}
 		}
 
+		function goToTab(event, tab) {
+			$('section').removeClass('activeTab');
+			$('#'+tab).addClass('activeTab');
+		}
+
 
 		//show gallery
-		var folder = "images/gallery/";
+		var folder = "./images/gallery/";
 		var galleryDiv = document.getElementsByClassName("slideshow-container")[0];
 		$.ajax({
 			url : folder,
@@ -378,45 +392,30 @@
 				$(data).find("a").attr("href", function (i, val) {
 					if( val.match(/\.(jpe?g|png|gif)$/) ) { 
 						//$("body").append( "<img src='"+ folder + val +"'>" );
-						var iDiv = document.createElement('div');
-						iDiv.className = "mySlides";
+
+						//var iDiv = document.createElement('div');
+						//iDiv.className = "mySlides";
 
 						var img = document.createElement('img');
-						img.src = "." + val;
-						img.style = "width:100%;";
+						img.className = "mySlides";
+						//img.src = "./images/gallery/" + val;
+						img.setAttribute('data-src', "./images/gallery/" + val);						
+						
+						//load first image
+						if(i == 1 || i == 2) {
+							img.src = "./images/gallery/" + val;					
+						}
 
-						iDiv.appendChild(img);
+						//iDiv.appendChild(img);
 
-						galleryDiv.appendChild(iDiv);
+						//galleryDiv.appendChild(iDiv);
+						galleryDiv.appendChild(img);
+
 					} 
 				});
 				showSlides(slideIndex);
 			}
 		});
-
-
-		//add images to gallery div for slideshow
-		// var galleryDiv = document.getElementsByClassName("slideshow-container")[0];
-		// gallery.photos.forEach((photo, i) => {
-		// 	var iDiv = document.createElement('div');
-		// 	iDiv.className = "mySlides";
-
-		// 	var img = document.createElement('img');
-		// 	img.src = "./images/gallery/" + photo;
-		// 	img.style = "width:100%;";
-
-		// 	iDiv.appendChild(img);
-
-		// 	galleryDiv.appendChild(iDiv);
-		// });
-
-
-		function goToTab(event, tab) {
-
-
-			$('section').removeClass('activeTab');
-			$('#'+tab).addClass('activeTab');
-		}
 
 
 
@@ -437,17 +436,20 @@
 		function showSlides(n) {
 			let i;
 			let slides = document.getElementsByClassName("mySlides");
-			let dots = document.getElementsByClassName("dot");
+			//let dots = document.getElementsByClassName("dot");
 			if (n > slides.length) { slideIndex = 1 }
 			if (n < 1) { slideIndex = slides.length }
 			for (i = 0; i < slides.length; i++) {
 				slides[i].style.display = "none";
 			}
-			for (i = 0; i < dots.length; i++) {
-				dots[i].className = dots[i].className.replace(" active", "");
-			}
+
+			//show image
 			slides[slideIndex - 1].style.display = "block";
-			dots[slideIndex - 1].className += " active";
+
+			//set image src for current image plus next one
+			slides[slideIndex - 1].src = slides[slideIndex - 1].dataset.src;	
+			slides[slideIndex].src = slides[slideIndex].dataset.src;	
+
 		} 
 
 
