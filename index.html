@@ -20,16 +20,20 @@
 
 		<!--Menu for phones-->
 		<div id="menu">
-			<!-- <button  onclick="showMenu()"><i id="menuBtn" class="material-icons">menu</i></button> -->
-			<button id="menuBtn" onclick="showMenu()"><span >Menu</span></button>
+			<!-- <button id="menuBtn" onclick="showMenu()"><i class="material-icons">menu</i></button> -->
+			<button id="menuBtn" onclick="showMenu()"><span>Menu</span></button>
 			<div class="dropdown-options">
-				<a onclick="goToTab(event, 'info')">Info</a>
+				<a onclick="goToTab(event, 'default')">Home</a>
+				<a onclick="goToTab(event, 'info')">Info</a>				
+				<a onclick="goToTab(event, 'announcements')">Announcements</a>
 				<a onclick="goToTab(event, 'tournaments')">Tournaments</a>
+				<a onclick="goToTab(event, 'notes')">Tournament Notes</a>
 				<a onclick="goToTab(event, 'board')">The Board</a>
-				<a onclick="goToTab(event, 'gallery')">Gallery</a>
-				<a onclick="goToTab(event, 'notes')">Notes</a>
+				<a onclick="goToTab(event, 'gallery')">Gallery</a>				
 			</div>
 		</div>
+
+		<!--<div id="home"><button onclick="goToTab(event, 'default')"><i class="material-icons">home</i></button></div>-->
 
 		<section id="default" class="activeTab"></section>
 
@@ -69,8 +73,8 @@
 										class="button">History</a></li>
 								<li><a href="./documents/Rules_August_2023.pdf" target="_blank"
 										class="button">Local Rules</a></li>
-								<li><a href="./documents/Hole_out_rules.pdf" target="_blank"
-										class="button">Urgent News</a></li>
+								<li><a href="./documents/debell board minutes 3_25_24.pdf" target="_blank"
+										class="button">Board Member Minutes</a></li>
 							</ul>
 						</header>
 						<p>Any person 50 years of age or older is eligible for membership to the Burbank Senior Men's
@@ -111,6 +115,17 @@
 			
 			</div>
 
+
+			<section id="announcements" class="main special">
+				<header class="major">
+					<h2>Announcements</h2>
+				</header>
+				<ul class="features" >
+													
+					
+				</ul>				
+			</section>
+
 			<!-- First Section -->
 			<section id="tournaments" class="main special">
 				<header class="major">
@@ -121,8 +136,14 @@
 					<li id="tournamentSchedule" onclick="goTo('./documents/Tournament Schedule 2024.pdf')">2024 Schedule</li>
 
 
-					<li onclick="goTo('./documents/inter-club match play.pdf')">
+					<li class="dropdown" onclick="goTo('./documents/inter-club match play.pdf')">
 						<span>Inter-Club Match Play Championship Schedule</span>
+						<div id="inter-club" class="dropdown-content">
+							<a href="./tournaments/inter_club_results.pdf" target="_blank">Results</a>
+						</div>
+					</li>
+					<li onclick="goTo('https://docs.google.com/document/d/10OGsN1skBgxREpMbJ2xpP12b26yc7TvcQzkfgE8rlVQ/edit?usp=sharing')">
+						<span>Entry Form</span>
 					</li>
 					<li id="pastSchedule" onclick="togglePastTournaments()">						
 						<span class="dropbtn">View Past Results</span>
@@ -167,11 +188,15 @@
 			<!-- Get Started -->
 			<section id="notes" class="main special">
 				<header class="major">
-					<h2>Notes</h2>
+					<h2>Tournament Notes</h2>
 				</header>
+					<span class="notesSection">Notes</span>
 				<embed type="application/pdf" src="./documents/UpdateNotes.pdf#toolbar=0&navpanes=0&scrollbar=0" width="90%" height="800"></object>
+					<span class="notesSection">4 Man Scramble Rules</span>
+				<embed type="application/pdf" src="./documents/4man Scramble Rules.pdf#toolbar=0&navpanes=0&scrollbar=0" width="90%" height="800"></object>
+					<span class="notesSection">4 Man Scramble Rules (RWB)</span>
+				<embed type="application/pdf" src="./documents/4man Scramble Rules (RWB).pdf#toolbar=0&navpanes=0&scrollbar=0" width="90%" height="800"></object>					
 			</section>
-
 		</div>
 
 		<!-- Footer -->
@@ -283,7 +308,8 @@
 
 					var entryForm = document.createElement('a');
 					entryForm.innerHTML = "Entry Form";
-					entryForm.href= tournament.entryForm ? `./documents/${tournament.entryForm}` : './documents/Burbank Senior Men Entry Form.docx';
+					//entryForm.href= tournament.entryForm ? `./documents/${tournament.entryForm}` : './documents/Burbank Senior Men Entry Form.docx';
+					entryForm.href= 'https://docs.google.com/document/d/10OGsN1skBgxREpMbJ2xpP12b26yc7TvcQzkfgE8rlVQ/edit?usp=sharing';
 					entryForm.target = '_blank';					
 
 					var teeTimes = document.createElement('a');
@@ -306,7 +332,7 @@
 						results.classList.add('disabled');
 					}
 
-					menuDiv.appendChild(entryForm);
+					//menuDiv.appendChild(entryForm);
 					menuDiv.appendChild(teeTimes);
 					menuDiv.appendChild(results);
 
@@ -362,7 +388,6 @@
 				}
 			}
 
-
 			var menu = document.getElementById('menuBtn');
 			if (!menu.contains(event.target)) {
 			
@@ -384,7 +409,7 @@
 
 
 		//show gallery
-		var folder = "./images/gallery/";
+		var folder = "images/gallery/";
 		var galleryDiv = document.getElementsByClassName("slideshow-container")[0];
 		$.ajax({
 			url : folder,
@@ -398,12 +423,11 @@
 
 						var img = document.createElement('img');
 						img.className = "mySlides";
-						//img.src = "./images/gallery/" + val;
-						img.setAttribute('data-src', "./images/gallery/" + val);						
+						img.setAttribute('data-src', "." + val);	
 						
 						//load first image
 						if(i == 1 || i == 2) {
-							img.src = "./images/gallery/" + val;					
+							img.src = "." + val;					
 						}
 
 						//iDiv.appendChild(img);
@@ -442,13 +466,10 @@
 			for (i = 0; i < slides.length; i++) {
 				slides[i].style.display = "none";
 			}
-
-			//show image
 			slides[slideIndex - 1].style.display = "block";
 
-			//set image src for current image plus next one
 			slides[slideIndex - 1].src = slides[slideIndex - 1].dataset.src;	
-			slides[slideIndex].src = slides[slideIndex].dataset.src;	
+			slides[slideIndex].src = slides[slideIndex].dataset.src;
 
 		} 
 

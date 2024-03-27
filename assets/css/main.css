@@ -2,6 +2,25 @@
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
 
 
+.notesSection {
+	width: 100%;
+	display: block;
+	margin-top:16px;
+}
+
+#home {
+	float:right;
+	margin-top:8px;
+}
+
+#home button {
+	box-shadow: unset !important;	
+}
+
+#home i {
+	font-size: xxx-large;
+}
+
 
 section:not(.activeTab) {
 	display: none !important;
@@ -40,6 +59,7 @@ section:not(.activeTab) {
 	border: 1px solid #00000038;
 	font-size: 32px;
 	z-index: 10;
+	width: 300px;
   }
 
 .dropdown-options a:hover {
@@ -276,7 +296,7 @@ section:not(.activeTab) {
 .mySlides {
   display: none;
   max-height: 750px;
-  max-width: 100%;
+  max-width:100%;
   margin-left: auto;
   margin-right: auto;
 }
